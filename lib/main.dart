@@ -23,9 +23,24 @@ class MyApp extends StatelessWidget {
 class RegisterActivity extends StatelessWidget {
   const RegisterActivity({super.key});
 
+  void mySnackBar(String message, BuildContext context) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(message)));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        elevation: 9,
+
+        child: const Icon(Icons.add),
+        onPressed: () {
+          mySnackBar("Button Clicked", context);
+        },
+      ),
+    );
   }
 }
 
