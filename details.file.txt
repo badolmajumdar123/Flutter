@@ -3,9 +3,15 @@
 
 import 'package:flutter/material.dart';
 
+
+//Main function........
+
+
 void main() {
   runApp(const MyApp());
 }
+
+//MaterialApp..........
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,6 +21,9 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(home: Homeactivity());
   }
 }
+
+
+// Scaffold().............
 
 class Homeactivity extends StatelessWidget {
   const Homeactivity({super.key});
@@ -33,3 +42,31 @@ class LoginActivity extends StatelessWidget {
     return const Scaffold();
   }
 }
+
+
+
+//MaterialApp All Property...........
+
+MaterialApp(
+  title: "My App",
+
+  debugShowCheckedModeBanner: false,
+
+  theme: ThemeData(
+    primarySwatch: Colors.teal,
+  ),
+
+  darkTheme: ThemeData(
+    brightness: Brightness.dark,
+  ),
+
+  initialRoute: "/",
+
+  routes: {
+    "/": (context) => Homeactivity(),
+    "/login": (context) => LoginActivity(),
+    "/register": (context) => RegisterActivity(),
+  },
+
+  home: Homeactivity(),
+)
