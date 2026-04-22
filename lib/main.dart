@@ -30,3 +30,12 @@ class LoginActivity extends StatelessWidget {
     return const Scaffold();
   }
 }
+
+class RegisterActivity extends StatelessWidget {
+  const RegisterActivity({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold();
+  }
+}

@@ -1,4 +1,4 @@
-//Flutter Sintex
+//Flutter Structure
 
 
 import 'package:flutter/material.dart';
