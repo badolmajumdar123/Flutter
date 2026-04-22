@@ -20,20 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Homeactivity extends StatelessWidget {
-  const Homeactivity({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("My App")),
-
-      body: Text("Hello Dart"),
-      backgroundColor: Color.fromRGBO(159, 144, 144, 1),
-    );
-  }
-}
-
 // class LoginActivity extends StatelessWidget {
 //   const LoginActivity({super.key});
 
@@ -51,3 +37,27 @@ class Homeactivity extends StatelessWidget {
 //     return const Scaffold();
 //   }
 // }
+
+class Homeactivity extends StatelessWidget {
+  const Homeactivity({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text("App", style: TextStyle(color: Colors.red)),
+        ),
+      ),
+
+      drawerScrimColor: Colors.blue,
+      body: Center(
+        child: Text("Hello Dart", style: TextStyle(color: Colors.blue)),
+      ),
+
+      backgroundColor: Colors.brown,
+      drawer: Drawer(shadowColor: Colors.red),
+      // endDrawer: EndDrawerButton(),
+    );
+  }
+}
