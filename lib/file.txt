@@ -1,4 +1,4 @@
-//IMPORTANT WIDGET
+//IMPORTANT WIDGET:
 
 
 1.Container
@@ -11,3 +11,14 @@
 8.Scaffold
 9.AppBar
 10.ElevatedButton
+
+
+
+// Full structure Scaffold:
+
+Scaffold
+ ├── AppBar
+ ├── Body
+ ├── FloatingActionButton
+ ├── Drawer
+ └── BottomNavigationBar

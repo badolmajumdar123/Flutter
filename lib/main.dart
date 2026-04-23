@@ -1,4 +1,4 @@
-import 'package:flu/practiceAppbar.dart';
+import 'package:flu/practicebottomNavigationBar.dart';
 
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: PracticeAppBarr(),
+      home: Practicebottomnavigationbar(),
     );
   }
 }
