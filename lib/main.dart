@@ -1,4 +1,4 @@
-import 'package:flu/PracticeColum.dart';
+import 'package:flu/practiceCenter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: PracticeColumn(),
+      home: PracticeCenter(),
     );
   }
 }
