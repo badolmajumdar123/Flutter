@@ -1,6 +1,5 @@
+import 'package:flu/practiceRow.dart';
 import 'package:flutter/material.dart';
-
-import 'practiceText.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: PracticeText(),
+      home: PracticeRow(),
     );
   }
 }
