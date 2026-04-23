@@ -1,4 +1,4 @@
-import 'package:flu/practiceSizedBox.dart';
+import 'package:flu/practiceElevatedButton.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: PracticeSizedBox(),
+      home: PracticeElevatedButton(),
     );
   }
 }
