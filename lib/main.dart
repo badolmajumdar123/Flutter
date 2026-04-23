@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'practiceContainer.dart';
+
+import 'practiceText.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: PracticeContainer(),
+      home: PracticeText(),
     );
   }
 }
