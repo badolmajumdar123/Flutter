@@ -1,4 +1,4 @@
-import 'package:flu/practicePadding.dart';
+import 'package:flu/practiceSizedBox.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: PracticePadding(),
+      home: PracticeSizedBox(),
     );
   }
 }
