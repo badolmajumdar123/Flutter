@@ -1,5 +1,5 @@
-import 'package:flu/Loginpage.dart';
 import 'package:flutter/material.dart';
+import 'package:flu/practice.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: Loginpage(),
+      home: Practicepage(),
     );
   }
 }
