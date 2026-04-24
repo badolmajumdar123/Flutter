@@ -1,4 +1,4 @@
-import 'package:flu/Task.dart';
+import 'package:flu/SuperUIPage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: CleanPage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: SuperUIPage());
   }
 }
