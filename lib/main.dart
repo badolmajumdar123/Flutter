@@ -1,8 +1,7 @@
-import 'package:flu/demopage.dart';
+import 'package:flu/uniquepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'inputbox.dart';
 import 'Bloc/post_bloc.dart';
 
 void main() {
@@ -14,9 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const DemoPage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: UniquePage());
   }
 }
