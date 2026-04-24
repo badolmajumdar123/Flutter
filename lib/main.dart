@@ -1,4 +1,5 @@
-import 'package:flu/rowcontainer.dart';
+import 'package:flu/inputbox.dart';
+
 import 'package:flutter/material.dart';
 
 //Navigation Drawer Two Part
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
 
-      home: Rowcontainer(),
+      home: InputBox(),
     );
   }
 }
