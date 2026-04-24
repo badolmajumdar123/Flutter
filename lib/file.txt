@@ -22,3 +22,14 @@ Scaffold
  ├── FloatingActionButton
  ├── Drawer
  └── BottomNavigationBar
+
+
+
+ //Bloc - API
+
+
+ post_event.dart   → action
+post_state.dart   → state
+post_bloc.dart    → logic
+home_screen.dart  → UI
+main.dart         → provider/store

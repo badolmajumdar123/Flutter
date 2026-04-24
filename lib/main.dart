@@ -1,11 +1,11 @@
-import 'package:flu/inputbox.dart';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-//Navigation Drawer Two Part
-//Header and ListTitle
+import 'inputbox.dart';
+import 'Bloc/post_bloc.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(BlocProvider(create: (_) => PostBloc(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,12 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
-      darkTheme: ThemeData(brightness: Brightness.light),
-
       debugShowCheckedModeBanner: false,
-
-      home: InputBox(),
+      home: const InputBox(),
     );
   }
 }
