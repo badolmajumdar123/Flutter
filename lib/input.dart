@@ -68,7 +68,7 @@ class _InputState extends State<Input> {
 
                   if (name.isEmpty || password.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text("সব ফিল্ড পূরণ করো")),
+                      const SnackBar(content: Text("all fields are required")),
                     );
                     return;
                   }
@@ -165,7 +165,9 @@ class _InputState extends State<Input> {
                     );
                   }
 
-                  return const Center(child: Text("ডাটা submit বা fetch করো"));
+                  return const Center(
+                    child: Text("please submit the from or fetch users"),
+                  );
                 },
               ),
             ),
