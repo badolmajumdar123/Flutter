@@ -117,3 +117,9 @@ class LoginError extends AuthState {}
 👉 Input → controller → event → bloc → backend
 
 👉 TextField → Controller → Event → Bloc → API → Backend → Response → UI
+
+
+
+//flow Bloc//
+
+UI → Event → Bloc → State → UI

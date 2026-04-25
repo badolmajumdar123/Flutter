@@ -1,8 +1,10 @@
 abstract class PostEvent {}
 
 class SubmitFormEvent extends PostEvent {
-  final String enterText;
-  final String firstName;
+  final String name;
+  final String password;
 
-  SubmitFormEvent({required this.enterText, required this.firstName});
+  SubmitFormEvent({required this.name, required this.password});
 }
+
+class FetchUsersEvent extends PostEvent {}

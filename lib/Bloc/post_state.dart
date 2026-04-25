@@ -5,9 +5,9 @@ class PostInitial extends PostState {}
 class PostLoading extends PostState {}
 
 class PostSuccess extends PostState {
-  final String result;
+  final dynamic data;
 
-  PostSuccess(this.result);
+  PostSuccess(this.data);
 }
 
 class PostError extends PostState {

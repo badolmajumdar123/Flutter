@@ -13,80 +13,161 @@ class Input extends StatefulWidget {
 }
 
 class _InputState extends State<Input> {
-  final controller = TextEditingController();
-  final firstnameController = TextEditingController();
+  final namecontroller = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    namecontroller.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("User App")),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // 🔹 INPUT
+            // 🔹 NAME INPUT
             TextField(
-              controller: controller,
+              controller: namecontroller,
               decoration: InputDecoration(
-                labelText: "Enter Text",
+                labelText: "Name",
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 15),
+
+            // 🔹 PASSWORD INPUT
+            TextField(
+              controller: passwordController,
+              obscureText: true,
+              decoration: InputDecoration(
+                labelText: "Password",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
             ),
 
             const SizedBox(height: 20),
-            TextField(
-              controller: firstnameController,
-              decoration: InputDecoration(
-                labelText: "Enter Name",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
+
+            // 🔹 REGISTER BUTTON
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  final name = namecontroller.text.trim();
+                  final password = passwordController.text.trim();
+
+                  if (name.isEmpty || password.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("সব ফিল্ড পূরণ করো")),
+                    );
+                    return;
+                  }
+
+                  context.read<PostBloc>().add(
+                    SubmitFormEvent(name: name, password: password),
+                  );
+
+                  namecontroller.clear();
+                  passwordController.clear();
+                },
+                child: const Text("Register"),
+              ),
+            ),
+
+            const SizedBox(height: 10),
+
+            // 🔹 GET USERS BUTTON
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  context.read<PostBloc>().add(FetchUsersEvent());
+                },
+                child: const Text("Get All Users"),
               ),
             ),
 
             const SizedBox(height: 20),
 
-            // 🔹 BUTTON (Bloc trigger)
-            ElevatedButton(
-              onPressed: () {
-                context.read<PostBloc>().add(
-                  SubmitFormEvent(
-                    enterText: controller.text,
-                    firstName: firstnameController.text,
-                  ),
-                );
-                print(controller.text);
-                print(firstnameController.text);
-              },
-              child: const Text("Submit"),
-            ),
+            // 🔹 RESULT AREA
+            Expanded(
+              child: BlocBuilder<PostBloc, PostState>(
+                builder: (context, state) {
+                  // 🔹 Loading
+                  if (state is PostLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
 
-            const SizedBox(height: 20),
+                  // 🔹 Success
+                  if (state is PostSuccess) {
+                    final data = state.data;
 
-            // 🔹 UI STATE
-            BlocBuilder<PostBloc, PostState>(
-              builder: (context, state) {
-                if (state is PostLoading) {
-                  return const CircularProgressIndicator();
-                }
+                    // 👉 Register success (String)
+                    if (data is String) {
+                      return Center(
+                        child: Text(
+                          data,
+                          style: const TextStyle(
+                            color: Colors.green,
+                            fontSize: 16,
+                          ),
+                        ),
+                      );
+                    }
 
-                if (state is PostSuccess) {
-                  return Text(
-                    state.result,
-                    style: const TextStyle(color: Colors.green),
-                  );
-                }
+                    // 👉 Ensure it's Map
+                    if (data is! Map) {
+                      return const Center(child: Text("Invalid response"));
+                    }
 
-                if (state is PostError) {
-                  return Text(
-                    state.error,
-                    style: const TextStyle(color: Colors.red),
-                  );
-                }
+                    final users = data['users'];
 
-                return const Text("Enter something and submit");
-              },
+                    // 👉 Empty / invalid
+                    if (users == null || users is! List || users.isEmpty) {
+                      return const Center(child: Text("No users found"));
+                    }
+
+                    // 🔹 List UI
+                    return ListView.builder(
+                      itemCount: users.length,
+                      itemBuilder: (context, index) {
+                        final user = users[index];
+
+                        return Card(
+                          margin: const EdgeInsets.symmetric(vertical: 6),
+                          child: ListTile(
+                            leading: const Icon(Icons.person),
+                            title: Text(user['name'] ?? "No Name"),
+                            subtitle: Text(user['email'] ?? "No Email"),
+                          ),
+                        );
+                      },
+                    );
+                  }
+
+                  // 🔹 Error
+                  if (state is PostError) {
+                    return Center(
+                      child: Text(
+                        state.error,
+                        style: const TextStyle(color: Colors.red),
+                      ),
+                    );
+                  }
+
+                  return const Center(child: Text("ডাটা submit বা fetch করো"));
+                },
+              ),
             ),
           ],
         ),
