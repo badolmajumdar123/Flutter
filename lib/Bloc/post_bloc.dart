@@ -1,5 +1,6 @@
-import 'dart:convert';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 import 'post_event.dart';
 import 'post_state.dart';
@@ -11,15 +12,16 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
       try {
         final response = await http.post(
-          Uri.parse('http://localhost:3000/api/users'),
+          Uri.parse('http://10.0.2.2:3000/api/users'),
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode({
+            "text": event.enterText,
             "firstName": event.firstName,
-            "lastName": event.lastName,
-            "email": event.email,
-            "password": event.password,
           }),
         );
+
+        print(response.statusCode);
+        print(response.body);
 
         if (response.statusCode == 200 || response.statusCode == 201) {
           emit(PostSuccess("User created successfully"));
@@ -27,10 +29,9 @@ class PostBloc extends Bloc<PostEvent, PostState> {
           emit(PostError("Failed to create user"));
         }
       } catch (e) {
+        print("ERROR: $e");
         emit(PostError(e.toString()));
       }
     });
   }
-
-  get http => null;
 }

@@ -5,11 +5,13 @@ class PostInitial extends PostState {}
 class PostLoading extends PostState {}
 
 class PostSuccess extends PostState {
-  final String message;
-  PostSuccess(this.message);
+  final String result;
+
+  PostSuccess(this.result);
 }
 
 class PostError extends PostState {
   final String error;
+
   PostError(this.error);
 }
