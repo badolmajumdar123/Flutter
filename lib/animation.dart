@@ -25,7 +25,6 @@ class _SuperUIAnimationState extends State<SuperUIAnimation> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔍 Search
             Padding(
               padding: const EdgeInsets.all(16),
               child: TextField(
@@ -42,7 +41,6 @@ class _SuperUIAnimationState extends State<SuperUIAnimation> {
               ),
             ),
 
-            // 🧠 Categories (Animated)
             SizedBox(
               height: 50,
               child: ListView.builder(
@@ -79,7 +77,6 @@ class _SuperUIAnimationState extends State<SuperUIAnimation> {
 
             const SizedBox(height: 15),
 
-            // 📊 Grid cards (Animated press)
             Padding(
               padding: const EdgeInsets.all(16),
               child: GridView.count(
@@ -107,7 +104,6 @@ class _SuperUIAnimationState extends State<SuperUIAnimation> {
               ),
             ),
 
-            // 📋 Task List
             ListView.builder(
               itemCount: tasks.length,
               shrinkWrap: true,
@@ -148,7 +144,6 @@ class _SuperUIAnimationState extends State<SuperUIAnimation> {
         ),
       ),
 
-      // 🔻 Bottom Navigation
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) {
@@ -168,7 +163,6 @@ class _SuperUIAnimationState extends State<SuperUIAnimation> {
     );
   }
 
-  // 🔥 Animated Card
   Widget buildAnimatedCard(String title, IconData icon, Color color) {
     double scale = 1.0;
 

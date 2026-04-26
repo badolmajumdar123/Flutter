@@ -25,10 +25,7 @@ class _PracticeTextState extends State<P1> {
             CircleAvatar(
               radius: 20,
               backgroundColor: const Color.fromARGB(255, 184, 212, 235),
-              child: Icon(
-                Icons.account_balance, // 👈 icon
-                color: Colors.black,
-              ),
+              child: Icon(Icons.account_balance, color: Colors.black),
             ),
             SizedBox(height: 20),
             Padding(padding: EdgeInsets.only(left: 20, top: 5)),

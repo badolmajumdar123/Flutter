@@ -51,7 +51,6 @@ class _UserScreenState extends State<UserScreen> with TickerProviderStateMixin {
         child: Container(
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.95),
             borderRadius: BorderRadius.circular(20),
             boxShadow: const [BoxShadow(blurRadius: 20, color: Colors.black12)],
           ),

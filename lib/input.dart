@@ -31,7 +31,6 @@ class _InputState extends State<Input> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // 🔹 NAME INPUT
             TextField(
               controller: namecontroller,
               decoration: InputDecoration(
@@ -44,7 +43,6 @@ class _InputState extends State<Input> {
 
             const SizedBox(height: 15),
 
-            // 🔹 PASSWORD INPUT
             TextField(
               controller: passwordController,
               obscureText: true,
@@ -58,7 +56,6 @@ class _InputState extends State<Input> {
 
             const SizedBox(height: 20),
 
-            // 🔹 REGISTER BUTTON
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -86,7 +83,6 @@ class _InputState extends State<Input> {
 
             const SizedBox(height: 10),
 
-            // 🔹 GET USERS BUTTON
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -99,20 +95,16 @@ class _InputState extends State<Input> {
 
             const SizedBox(height: 20),
 
-            // 🔹 RESULT AREA
             Expanded(
               child: BlocBuilder<PostBloc, PostState>(
                 builder: (context, state) {
-                  // 🔹 Loading
                   if (state is PostLoading) {
                     return const Center(child: CircularProgressIndicator());
                   }
 
-                  // 🔹 Success
                   if (state is PostSuccess) {
                     final data = state.data;
 
-                    // 👉 Register success (String)
                     if (data is String) {
                       return Center(
                         child: Text(
@@ -125,19 +117,16 @@ class _InputState extends State<Input> {
                       );
                     }
 
-                    // 👉 Ensure it's Map
                     if (data is! Map) {
                       return const Center(child: Text("Invalid response"));
                     }
 
                     final users = data['users'];
 
-                    // 👉 Empty / invalid
                     if (users == null || users is! List || users.isEmpty) {
                       return const Center(child: Text("No users found"));
                     }
 
-                    // 🔹 List UI
                     return ListView.builder(
                       itemCount: users.length,
                       itemBuilder: (context, index) {
@@ -155,7 +144,6 @@ class _InputState extends State<Input> {
                     );
                   }
 
-                  // 🔹 Error
                   if (state is PostError) {
                     return Center(
                       child: Text(

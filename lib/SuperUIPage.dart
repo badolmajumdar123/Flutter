@@ -18,10 +18,8 @@ class _SuperUIPageState extends State<SuperUIPage> {
     return Scaffold(
       backgroundColor: const Color(0xfff4f6fb),
 
-      // 🔝 AppBar
       appBar: AppBar(title: const Text("Super App"), centerTitle: true),
 
-      // 📂 Drawer
       drawer: Drawer(
         child: ListView(
           children: const [
@@ -40,7 +38,6 @@ class _SuperUIPageState extends State<SuperUIPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🔍 Search
             Padding(
               padding: const EdgeInsets.all(16),
               child: TextField(
@@ -57,7 +54,6 @@ class _SuperUIPageState extends State<SuperUIPage> {
               ),
             ),
 
-            // 🧠 Categories
             SizedBox(
               height: 50,
               child: ListView.builder(
@@ -84,7 +80,6 @@ class _SuperUIPageState extends State<SuperUIPage> {
 
             const SizedBox(height: 15),
 
-            // 📊 Grid cards
             Padding(
               padding: const EdgeInsets.all(16),
               child: GridView.count(
@@ -100,7 +95,6 @@ class _SuperUIPageState extends State<SuperUIPage> {
               ),
             ),
 
-            // 📋 Task List
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
@@ -131,7 +125,6 @@ class _SuperUIPageState extends State<SuperUIPage> {
         child: const Icon(Icons.add),
       ),
 
-      // 🔻 Bottom Navigation
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) {

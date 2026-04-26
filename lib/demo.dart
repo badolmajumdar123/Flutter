@@ -28,7 +28,6 @@ class _UniquePageState extends State<UniquePage> {
       body: SafeArea(
         child: Column(
           children: [
-            // 🔥 CUSTOM APPBAR (completely custom)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               child: Row(
@@ -54,7 +53,6 @@ class _UniquePageState extends State<UniquePage> {
               ),
             ),
 
-            // 👤 Profile Card
             Container(
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(20),
@@ -89,7 +87,6 @@ class _UniquePageState extends State<UniquePage> {
               ),
             ),
 
-            // ✨ Input Box (glass effect)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Container(
@@ -129,7 +126,6 @@ class _UniquePageState extends State<UniquePage> {
 
             const SizedBox(height: 15),
 
-            // 📋 List
             Expanded(
               child: ListView.builder(
                 itemCount: items.length,
@@ -172,7 +168,6 @@ class _UniquePageState extends State<UniquePage> {
               ),
             ),
 
-            // 🔻 Custom Bottom Bar
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12),
               decoration: const BoxDecoration(

@@ -25,7 +25,6 @@ class _DemoPageState extends State<DemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 🔝 AppBar
       appBar: AppBar(
         title: const Text("Full Demo Page"),
         actions: [
@@ -38,7 +37,6 @@ class _DemoPageState extends State<DemoPage> {
         ],
       ),
 
-      // 📂 Drawer
       drawer: Drawer(
         child: ListView(
           children: const [
@@ -53,12 +51,10 @@ class _DemoPageState extends State<DemoPage> {
         ),
       ),
 
-      // 📱 Body
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // 📝 Input
             TextField(
               controller: controller,
               decoration: const InputDecoration(
@@ -69,12 +65,10 @@ class _DemoPageState extends State<DemoPage> {
 
             const SizedBox(height: 10),
 
-            // 🔘 Button
             ElevatedButton(onPressed: addItem, child: const Text("Add Item")),
 
             const SizedBox(height: 10),
 
-            // 📋 List
             Expanded(
               child: ListView.builder(
                 itemCount: items.length,
@@ -93,7 +87,6 @@ class _DemoPageState extends State<DemoPage> {
         child: const Icon(Icons.add),
       ),
 
-      // 🔻 Bottom Navigation
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) {

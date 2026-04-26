@@ -36,7 +36,6 @@ class _InputState extends State<Input1> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // 🔥 FORM CARD
             Card(
               elevation: 4,
               shape: RoundedRectangleBorder(
@@ -73,7 +72,6 @@ class _InputState extends State<Input1> {
 
                     const SizedBox(height: 20),
 
-                    // 🔹 BUTTON ROW
                     Row(
                       children: [
                         Expanded(
@@ -124,7 +122,6 @@ class _InputState extends State<Input1> {
 
             const SizedBox(height: 20),
 
-            // 🔥 RESULT SECTION
             Expanded(
               child: BlocBuilder<PostBloc, PostState>(
                 builder: (context, state) {
@@ -135,7 +132,6 @@ class _InputState extends State<Input1> {
                   if (state is PostSuccess) {
                     final data = state.data;
 
-                    // 🔹 Register success
                     if (data is String) {
                       return Center(
                         child: Text(
@@ -148,7 +144,6 @@ class _InputState extends State<Input1> {
                       );
                     }
 
-                    // 🔹 User list
                     final users = data['users'];
 
                     if (users == null || users.isEmpty) {

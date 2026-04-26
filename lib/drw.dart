@@ -10,13 +10,10 @@ class AllInOneUI extends StatelessWidget {
 
       drawer: Drawer(
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.horizontal(
-            right: Radius.circular(30), // 👈 rounded drawer
-          ),
+          borderRadius: BorderRadius.horizontal(right: Radius.circular(30)),
         ),
         child: Column(
           children: [
-            // 🔷 Gradient Header
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(16, 60, 16, 20),
@@ -57,16 +54,14 @@ class AllInOneUI extends StatelessWidget {
 
             const SizedBox(height: 10),
 
-            // 🔹 Menu Items
             _buildItem(Icons.home, "Home", context),
             _buildItem(Icons.person, "Profile", context),
             _buildItem(Icons.settings, "Settings", context),
 
-            const Spacer(), // 👈 push bottom
+            const Spacer(),
 
             const Divider(),
 
-            // 🔴 Logout bottom fixed
             ListTile(
               leading: const Icon(Icons.logout, color: Colors.red),
               title: const Text("Logout", style: TextStyle(color: Colors.red)),
@@ -86,7 +81,6 @@ class AllInOneUI extends StatelessWidget {
     );
   }
 
-  // 🔥 Reusable menu item (clean code)
   Widget _buildItem(IconData icon, String title, BuildContext context) {
     return ListTile(
       leading: Icon(icon),

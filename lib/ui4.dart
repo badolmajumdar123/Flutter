@@ -7,7 +7,6 @@ class AllInOneUI extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // 🔥 Gradient background
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xff667eea), Color(0xff764ba2)],
@@ -31,7 +30,6 @@ class AllInOneUI extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // 🔥 GLASS FORM CARD
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Container(
@@ -99,7 +97,6 @@ class AllInOneUI extends StatelessWidget {
 
               const SizedBox(height: 20),
 
-              // 🔥 MINIMAL LIST SECTION
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(16),

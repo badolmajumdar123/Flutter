@@ -25,7 +25,6 @@ class _UniquePageState extends State<UniquePage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
 
-      // 🔝 Gradient AppBar
       appBar: AppBar(
         title: const Text("My Dashboard"),
         flexibleSpace: Container(
@@ -37,7 +36,6 @@ class _UniquePageState extends State<UniquePage> {
 
       body: Column(
         children: [
-          // 👤 Profile Header
           Container(
             padding: const EdgeInsets.all(20),
             width: double.infinity,
@@ -71,7 +69,6 @@ class _UniquePageState extends State<UniquePage> {
 
           const SizedBox(height: 15),
 
-          // 📝 Input Card
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Card(
@@ -107,7 +104,6 @@ class _UniquePageState extends State<UniquePage> {
 
           const SizedBox(height: 10),
 
-          // 📋 List
           Expanded(
             child: ListView.builder(
               itemCount: items.length,

@@ -15,7 +15,6 @@ class _ContainerrState extends State<Containerr> {
       drawer: Drawer(
         child: Column(
           children: [
-            // 🔹 Header (profile part)
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               currentAccountPicture: CircleAvatar(
@@ -26,7 +25,6 @@ class _ContainerrState extends State<Containerr> {
               accountEmail: Text("badol@email.com"),
             ),
 
-            // 🔹 Menu items
             ListTile(
               leading: Icon(Icons.home),
               title: Text("Home"),

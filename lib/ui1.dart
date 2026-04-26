@@ -141,10 +141,7 @@ class _UserScreenState extends State<UserScreen> {
                 children: [
                   Text(
                     user['name'],
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text(user['email'] ?? ""),
                 ],

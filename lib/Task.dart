@@ -25,7 +25,6 @@ class _CleanPageState extends State<CleanPage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
 
-      // ✅ Proper AppBar (clean & modern)
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -36,7 +35,6 @@ class _CleanPageState extends State<CleanPage> {
 
       body: Column(
         children: [
-          // 🔵 Top Section
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(20),
@@ -51,7 +49,7 @@ class _CleanPageState extends State<CleanPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Hello Badol 👋",
+                  "Hello Badol ",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 SizedBox(height: 5),
@@ -101,7 +99,6 @@ class _CleanPageState extends State<CleanPage> {
 
           const SizedBox(height: 15),
 
-          // 📋 Task List
           Expanded(
             child: tasks.isEmpty
                 ? const Center(child: Text("No tasks yet"))

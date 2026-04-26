@@ -8,11 +8,9 @@ class AllInOneUI extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Home")),
 
-      // 🔥 Drawer Start
       drawer: Drawer(
         child: Column(
           children: [
-            // 🔷 Custom Header
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(16, 50, 16, 20),
@@ -49,7 +47,6 @@ class AllInOneUI extends StatelessWidget {
 
             const SizedBox(height: 10),
 
-            // 🔹 Menu Items
             ListTile(
               leading: const Icon(Icons.home),
               title: const Text("Home"),
@@ -87,7 +84,6 @@ class AllInOneUI extends StatelessWidget {
         ),
       ),
 
-      // 🔥 Drawer End
       body: const Center(
         child: Text("Main Screen", style: TextStyle(fontSize: 20)),
       ),

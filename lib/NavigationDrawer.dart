@@ -16,7 +16,6 @@ class _NavigationdrawerState extends State<Navigationdrawer> {
         backgroundColor: Colors.blue,
       ),
 
-      // 🔥 Drawer Start
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -72,7 +71,7 @@ class _NavigationdrawerState extends State<Navigationdrawer> {
           backgroundImage: NetworkImage("lib/IMG_20240328_113701516_MFNR.jpg"),
         ),
       ),
-      // 🔥 Drawer End
+      //
     );
   }
 }
