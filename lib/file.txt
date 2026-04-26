@@ -123,3 +123,20 @@ class LoginError extends AuthState {}
 //flow Bloc//
 
 UI → Event → Bloc → State → UI
+
+
+
+// Stracture UI
+
+
+Scaffold
+ ├── appBar
+ ├── body   👈 main UI এখানে
+ ├── floatingActionButton
+ └── drawer
+
+// Body and Drawer
+
+ Scaffold
+ ├── body → Column → children
+ └── drawer → Drawer → ListView → children
