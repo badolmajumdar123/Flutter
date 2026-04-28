@@ -46,13 +46,6 @@ class PracticePage extends StatelessWidget {
       "Password": "12345678",
       "Age": "26",
     },
-    {
-      "name": "Bappi Roy",
-      "Mobile": "6001412706",
-      "Email": "bappi@gmail.com",
-      "Password": "28",
-      "Age": "14",
-    },
   ];
 
   @override
