@@ -10,7 +10,8 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     // 🔹 REGISTER
     on<SubmitFormEvent>((event, emit) async {
       emit(PostLoading());
-
+      print(event.name);
+      print(event.password);
       try {
         final response = await http.post(
           Uri.parse("http://localhost:4000/user/register"),
