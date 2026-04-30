@@ -71,7 +71,7 @@ class _LoginpageState extends State<Loginpage> {
                     String name = emailController.text;
                     String pass = passController.text;
 
-                    // 👉 simple condition (demo)
+             
                     if (name == "badol" && pass == "123") {
                       Navigator.push(
                         context,
